@@ -1,29 +1,80 @@
-# iFood Frontend Test
+# spotifood / ifood-frontend-test
 
-Create a web application called Spotifood used to display the preferred playlists from iFood's customers. The web application has only one page:
-* A page that lists the featured playlists at Spotify according to some criteria.
+### Pré-requisitos
 
-## Business rules
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-* The page is composed of two components:
-    * One list of featured playlists
-    * One filter component with API filter fields and one local search text input to filter the playlists by "name".
-    
-* The filter component should be used to filter the elements displayed by the list of featured playlists.
-* The API filter fields and their possible values/type should be mounted by consuming this API **[1. Playlists Filters]** (http://www.mocky.io/v2/5a25fade2e0000213aa90776)
-* The featured playlists to be displayed should be consumed from this API **[2. See the documentation from Spotify]** (https://developer.spotify.com/web-api/get-list-featured-playlists/)
-* Every time the user change any information on the filter component, the list should be refresh accordingly. In case of API filter field change you should recall the playlists API with the filter parameters every time.
-* Considering that we live in a chaotic and fast-changing world, the page should refresh its content every 30 seconds, to see if any information from the Spotify APIs had been changed.
+<h4 align="center"> 
+	🚀 Concluído... 🚀
+</h4>
 
-## Hints or Constraints
+### Features
 
-We will use one API from Spotify Web API. You should follow the Spotify guide in order to create a token needed to access Spotify's API.
-To mount the API filter fields on the filter component, you **must** consume the API that provides the metadata about the fields (Link 1).
-You could use Material UI, Bootstrap or any other toolkit to accelerate your resolution. We will not provide any UI prototype or design.
+- [x] Lista de Playlist
+- [x] Filtros 
+- [x] Login no spotify para acessar a chave
 
-## Non functional requirements
+### 🎲 Rodando o Back End (servidor - Responsável em pegar a chave de acesso)
 
-As this application will be a worldwide success, it must be prepared to be accessible, responsive, fault tolerant and resilient.
-We **strongly recommend** using React to build the application.
-Also, briefly elaborate on your solution architecture details, choice of patterns and frameworks.
-Fork this repository and submit your code.
+```bash
+# Clone este repositório
+$ git clone <https://github.com/spotify/web-api-auth-examples>
+
+# Acesse a pasta do projeto
+$ cd web-api-auth-examples
+
+# Instale as dependências
+$ npm install
+
+# Após a instalação acesse a pasta
+$ cd web-api-auth-examples
+
+# Abra o arquivo
+$ app.js
+
+# Busque pelas variáveis “client_id”, “client_secret” e “redirect_ui” e altere para:
+$ var client_id = '6d0768c9900d466f8945f731cf743ba2';
+$ var client_secret = '0cfcbf3b690a49078f85fb4f06979180';
+$ var redirect_uri = 'http://localhost:8888/callback'; 
+
+# Na linha 107 no primeiro red.redirect e altere:
+$ res.redirect('http://localhost:8080/#'
+
+# Vá para a pasta:
+$ cd authorization_code
+
+# Execute a aplicação em modo de desenvolvimento
+$ node app.js
+
+# O servidor inciará na porta:8888
+```
+### 🎲 Rodando o Front End
+```bash
+
+# Clone este repositório
+$ https://github.com/gregoryls1/spotifood
+
+# Acesse a pasta do projeto
+$ cd spotifood
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm start
+
+# O servidor inciará na porta:8080
+```
+
+### 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Node.js](https://nodejs.org/en/)
+- [React](https://pt-br.reactjs.org/)
+- [JavaScript](https://www.javascript.com/)
+- [Webpack4](https://webpack.js.org/)
+- [Babel](https://babeljs.io/)
+- [Jest](https://jestjs.io/pt-BR/)

@@ -1,0 +1,26 @@
+.spotifood{
+    .title{
+        color: white;
+        font-weight: bold;
+    }
+    
+    .list-playlists{
+        width: calc(100% - 250px);
+        height: 100vh;
+        position: relative;
+        left: 250px;
+
+        @media(max-width: 768px) {
+            width: 100%;
+            left: 0;
+        }
+
+        @media(max-width: 471px) {
+            align-items: center;
+
+            .container-playlist{
+                justify-content: center;
+            }
+        }
+    }
+}

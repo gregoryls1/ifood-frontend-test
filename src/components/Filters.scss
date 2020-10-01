@@ -1,0 +1,51 @@
+.sidebar{
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    background-color: black;
+    color: white;
+    z-index: 2;
+
+    @media(max-width: 768px) {
+        left: -250px;
+        transition: 500ms all;
+
+        &.show{
+            left: 0;    
+        }
+    }   
+
+    .navbar-brand{
+        color: white;
+        padding: 30px 0;
+    }
+
+    form{
+        width: 235px;
+    }
+
+    #timestamp{
+        font-size: 14px;
+    }
+
+    .mobile-filter{
+        width: 40px;
+        height: 60px;
+        position: absolute;
+        justify-content: flex-end;
+        align-items: center;
+        bottom: 100px;
+        right: -40px;
+        background: #1db954;
+        border-radius: 0 50% 50% 0;
+        display: none;
+
+        @media(max-width: 768px){
+            display: flex;
+        }
+
+        .icon-filter{
+            padding: 12px;
+        }
+    }
+}
